@@ -1,0 +1,329 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Mobile.master.cs" Inherits="DemeterMachine.Site_Mobile" %>
+<%@ Register Src="~/ViewSwitcher.ascx" TagPrefix="friendlyUrls" TagName="ViewSwitcher" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+
+    <meta charset="utf-8">
+	<title>DEMETER MACHINE</title>	
+<%--	<link rel="shortcut icon" href="Images/favicon_2-01.png" type="image/x-icon">--%>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" http-equiv="expires">
+<%--	<meta name="viewport" content="width=device-width, initial-scale=1.0">--%>
+	<link href="style.css" rel="stylesheet">
+	<link href="Content/bootstrap.min.css" rel="stylesheet">
+<%--	<link rel="stylesheet" href="https://cdjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>--%>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"> 
+    <link rel="icon" href="Images/favicon_2-01.png" type="image/x-icon">
+
+<%--        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="scripts/bootstrap.min.js"></script>--%>
+
+
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+<%--       <%: Scripts.Render("~/Scripts/bootstrap.min.js") %>--%>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+<%--    <link href="~/favicon.ico" rel="shortcut icon" type="Image/x-icon" />--%>
+      
+        <asp:ContentPlaceHolder ID="head" runat="server">
+  
+    </asp:ContentPlaceHolder>
+
+    <script>
+        function makePhoneCall() {
+            window.location.href = 'tel:+6052161125'; // Replace with your phone number
+        }
+    </script>
+
+
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+	<nav class="navbar navbar-expand-xl navbar-dark text-uppercase" style="background-color: #D99414;">
+		<a class="navbar-brand" href="Default.aspx">
+			<img src="Images/logo_alt-01.png" class="img-fluid" style="margin-left: 15px; width: 300px;" alt="Demeter Machine Logo">
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-collapse">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		
+		<div class="collapse navbar-collapse justify-content-between" id="nav-collapse">
+			<ul class="navbar-nav mr-auto">
+				<li><a href="Default.aspx">Home</a></li>
+                
+                <!--   modified drop down so it shows on hover instead of click - better user experience for demographic    -->
+				<li class="nav-item "><a  href="<%= ResolveUrl("~/product.aspx") %>" id="dropdown">Products</a></li>
+				<li class="nav-item "><a  href="<%= ResolveUrl("~/rentals.aspx") %>" id="dropdownRental">Rentals</a></li>
+
+				<li>  <asp:HyperLink ID="hlServices" NavigateUrl="~/partStore.aspx" runat="server">Parts Store</asp:HyperLink>
+
+                <li>
+                     <asp:HyperLink  runat="server" NavigateUrl="~/cart.aspx" >
+                         <span class="glyphicon glyphicon-shopping-cart"></span>Cart
+                         <span id="spanCount" runat="server" class="badge" style="position:relative; top:-18px; left:-1px; padding:0px; margin:0px; color:#8B181B "></span>
+                     </asp:HyperLink>
+               </li>
+
+              <li><a  href="<%= ResolveUrl("~/services.aspx") %>">Services</a></li>
+
+
+				<li><a  href="<%= ResolveUrl("~/About.aspx") %>">About Us</a></li>
+				<%-- <li><a href="Login.aspx">Log In</a></li> --%>
+
+
+
+       </ul>
+
+           <ul class="navbar-nav" >
+               <li>
+                    <asp:HyperLink runat="server"
+                        data-toggle="dropdown" CssClass="dropdown-toggle" ID="settingsLink" Visible="false">
+                         <span class="fas fa-cog"></span> Settings
+                        <span class="caret"></span>
+                    </asp:HyperLink>
+                   <ul class="dropdown-menu" style="background-color:#D99414;" >
+                       <li>
+                          <asp:Label ID="lblWelcome" CssClass="dropdown-item" Text="" ClientIDMode="Static" runat="server"></asp:Label>
+                       </li>
+
+                <li>
+                     <asp:HyperLink runat="server" ID="hlOrderHistory"
+                         NavigateUrl="~/orderHistory.aspx" Visible="false">
+                         <span class="glyphicon glyphicon-tasks"></span>Order History
+                     </asp:HyperLink>
+                </li>
+
+                        <li>
+                            <asp:HyperLink runat="server"
+                                NavigateUrl="~/settings.aspx">Settings
+                            </asp:HyperLink>
+                        </li>
+
+                 <li class="nav-item dropdown">
+                    <asp:HyperLink runat="server"
+                        data-toggle="dropdown" CssClass="dropdown-toggle" ID="databaseButton" Visible="false">
+                        <span class="glyphicon glyphicon-folder-open"></span>Database
+                        <span class="caret"></span>
+                    </asp:HyperLink>
+
+                    <ul class="dropdown-menu">
+                   
+                        <li>
+                            <asp:HyperLink runat="server" ID="attachments"
+                                NavigateUrl="~/attachments.aspx">
+                                <span class="glyphicon glyphicon-tasks"></span>Attachments
+                            </asp:HyperLink>
+                        </li>
+
+                        <li>
+                            <asp:HyperLink runat="server" ID="customers"
+                                NavigateUrl="~/customers.aspx">
+                                <span class="glyphicon glyphicon-magnet"></span>Customers
+                            </asp:HyperLink>
+                        </li>
+
+                        <li>
+                            <asp:HyperLink runat="server" ID="employees"
+                                NavigateUrl="~/employee.aspx">
+                                <span class="glyphicon glyphicon-list-alt"></span>Employees
+                            </asp:HyperLink>
+                        </li>
+
+                        <li>
+                            <asp:HyperLink runat="server" ID="equipment"
+                                NavigateUrl="~/equipment.aspx">
+                                <span class="glyphicon glyphicon-picture"></span>Equipment
+                            </asp:HyperLink>
+                        </li>
+
+                        <li>
+                            <asp:HyperLink runat="server" ID="orders"
+                                NavigateUrl="~/orderHistoryMaster.aspx">
+                                <span runat="server" class="glyphicon glyphicon-inbox"></span>Orders
+                            </asp:HyperLink>
+                        </li>
+
+                        <li>
+                            <asp:HyperLink runat="server" ID="parts"
+                                NavigateUrl="~/parts.aspx">
+                                <span runat="server" class="glyphicon glyphicon-inbox"></span>Parts
+                            </asp:HyperLink>
+                        </li>
+
+                        <li>
+                            <asp:HyperLink runat="server" ID="serviceRecords"
+                                NavigateUrl="~/serviceRecord.aspx">
+                                <span runat="server" class="glyphicon glyphicon-inbox"></span>Service Records
+                            </asp:HyperLink>
+                        </li>
+
+                        <li>
+                            <asp:HyperLink runat="server" ID="suppliers"
+                                NavigateUrl="~/suppliers.aspx">
+                                <span runat="server" class="glyphicon glyphicon-inbox"></span>Suppliers
+                            </asp:HyperLink>
+                        </li>
+
+                    </ul>
+                  </li>
+                       <li>
+                          <asp:Button ID="btnLogout" CssClass="btn btn-secondary" Visible="false" ClientIDMode="Static" Text="Logout" runat="server" OnClick="btnLogout_Click" CausesValidation="false"></asp:Button>
+                       </li>                   
+                   </ul>
+
+               </li>
+               <li class="nav-item">
+                   <asp:Button ID="btnLogin" CssClass="btn btn-secondary custom-Btn"  ClientIDMode="Static" Text="Login" runat="server" OnClick="btnLogin_Click" CausesValidation="false"></asp:Button>
+               </li>
+
+          </ul>
+
+		</div>	
+	</nav>
+
+
+        <div class="body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+
+            </asp:ContentPlaceHolder>
+
+        </div>
+
+
+      <footer>
+        <div class="foot">
+            <div class="row">
+                <div id="foot-logo" class="col-lg-4 col-md-12">
+                    <img src="images/logo.png" class="img-fluid" alt="Demeter Machine">
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <h5>PRODUCTS</h5>
+                    <ul>
+                        <li><asp:LinkButton ID="tractorLinkButton" OnClick="tractorLinkButton_Click" runat="server">Tractors</asp:LinkButton></li>
+						<li><asp:LinkButton ID="combinesLinkButton" OnClick="combinesLinkButton_Click" runat="server">Combines</asp:LinkButton></li>
+						<li><asp:LinkButton ID="plantersLinkButton" OnClick="plantersLinkButton_Click" runat="server">Planters</asp:LinkButton></li>
+						<li><asp:LinkButton ID="sprayersLinkButton" OnClick="sprayers_Click" runat="server">Sprayers</asp:LinkButton></li>
+						<li><asp:LinkButton ID="rentalsLinkButton" OnClick="rentalsLinkButton_Click" runat="server">Rentals</asp:LinkButton></li>
+
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>PARTS &amp; SERVICES</h5>
+                    <ul>
+						<li><a href="<%= ResolveUrl("~/services.aspx") %>">Services</a></li>
+                        <li><a href="<%= ResolveUrl("~/partStore.aspx") %>">Buy Parts Online</a></li>
+                        <li><a href="<%= ResolveUrl("~/technology.aspx") %>">Technology</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>ABOUT DEMETER</h5>
+                    <ul>
+                        <li><a href="<%= ResolveUrl("~/About.aspx") %>">About Us</a></li>
+                        <li><a href="<%= ResolveUrl("~/news.aspx") %>">News &amp; Events</a></li>
+                        <li><a href="<%= ResolveUrl("~/locations.aspx") %>">Locations</a></li>
+                        <li><a href="<%= ResolveUrl("~/careers.aspx") %>">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>DEMETER SOCIAL</h5>
+                    <ul>
+                        <li><a href="https://www.facebook.com/groups/1553258501882551/">Facebook</a></li>
+                        <li><a href="https://www.instagram.com/demeter_machine/">Instagram</a></li>
+                        <li><a href="https://www.youtube.com/channel/UCTz5hmlK8x8hbjaiTIU7IcQ">Youtube</a></li>
+                        <li><a href="https://www.linkedin.com/company/101916000/admin/feed/posts/?feedType=following">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+		</div>
+		<div class="copyright">
+			&copy; 2024 Copyright Demeter Machine
+		</div>					
+	</footer>
+	    </form>
+    <asp:PlaceHolder runat="server">
+<%--        <%: Scripts.Render("~/Scripts/bootstrap.js") %>--%>
+        <%: Scripts.Render("~/Scripts/bootstrap.min.js") %>
+<%--        	<script src="scripts/jquery.js"></script>
+        	<script src="scripts/scripts.js"></script>--%>	
+
+    </asp:PlaceHolder>
+
+<script>
+    $(document).ready(function () {
+        // Close navbar dropdown when clicked outside
+        $(document).click(function (event) {
+            var clickover = $(event.target);
+            var $navbar = $(".navbar-collapse");
+            var _opened = $navbar.hasClass("show");
+            if (_opened === true && !clickover.hasClass("navbar-toggler")) {
+                $navbar.collapse('hide');
+            }
+        });
+
+        // Close navbar dropdown when navbar-toggler is clicked
+        $(".navbar-toggler").click(function () {
+            var $navbar = $(".navbar-collapse");
+            var _opened = $navbar.hasClass("show");
+            if (_opened === true) {
+                $navbar.collapse('hide');
+            } else {
+                $navbar.collapse('show');
+            }
+        });
+    });
+</script>
+
+    <script>
+        // Function to limit maximum characters for input fields
+        function limitCharacters(maxLength) {
+            // Get all input fields on the page
+            var inputFields = document.querySelectorAll('input[type="text"]');
+
+            // Loop through each input field
+            inputFields.forEach(function (input) {
+                // Attach an event listener to the input field
+                input.addEventListener('input', function () {
+                    // Check if the length of the input exceeds the limit
+                    if (this.value.length > maxLength) {
+                        // Trim the input to the maximum character limit
+                        this.value = this.value.substring(0, maxLength);
+                    }
+                });
+            });
+        }
+
+        // Call the function to limit characters with a maximum length of 20
+        document.addEventListener('DOMContentLoaded', function () {
+            limitCharacters(20); // You can adjust the maximum length as needed
+        });
+    </script>
+        <friendlyUrls:ViewSwitcher runat="server" />
+
+</body>
+</html>

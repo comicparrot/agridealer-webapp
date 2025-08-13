@@ -1,0 +1,1086 @@
+﻿/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+@font-face {
+	src: url("/Fonts/Landasans-Medium.ttf");
+	font-family: "Landasans Medium";
+}
+
+@font-face {
+	src: url("/Fonts/SPEED FEZ italic.ttf");
+	font-family: 'SPEED FEZ italic';
+}
+
+.body-content {
+	margin-top: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	width: 100%;
+	overflow-x: hidden;
+}
+
+/* Set widths on the form inputs since otherwise they're 100% wide */
+input,
+select,
+textarea {
+    max-width: 80%;
+}
+
+
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    .body-content {
+        padding: 0;
+    }
+}
+
+
+
+.btn {
+    background-color: #8B181B;
+    border: none;
+    color: white;
+    padding: 12px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.2em;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 15px;
+    font-family: "Landasans Medium";
+}
+
+.btn2{
+    margin-left: 10%;
+}
+
+.custom-Btn{
+	margin-right:30px
+}
+
+.cart {
+	padding: 10px 50px;
+}
+
+.cartPage {
+    min-height: 70vh;
+}
+
+.card.shadow {
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.custom-control-input{
+}
+
+.custom-control-label{
+	margin-left:5px;
+}
+
+.custom-error{
+	font-size:.7em;
+	line-height:15px;
+}
+
+.custom-row {
+	border: 1px, solid, gray;
+}
+
+.custom-border{
+	border-radius:5px;
+}
+
+.diagonal-text {
+	position: absolute;
+	transform: rotate(-35deg);
+	transform-origin: 0 0;
+	color: #BF2129;
+	top: 35%;
+	right: 75%;
+	z-index: 1;
+}
+
+.error-text{
+	margin-left:10%;
+}
+
+.form-group {
+	margin-bottom: 15px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+}
+
+
+.form-control{
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.gridViewOverFlow {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1400px;
+    overflow-x: scroll;
+}
+
+h1{
+	text-align:center;
+}
+
+.signupLabel{
+    padding-left:10%;
+}
+
+.signupLabel1{
+	text-align:left
+}
+
+.tractor-rental{
+	margin-top: -50px;
+}
+
+
+.center {
+	margin-left: auto;
+	margin-right: auto;
+	width: 900px;
+}
+
+.imageCenter{
+    margin-left:auto;
+    margin-right:auto;
+    width:auto
+}
+
+.customContainer {
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.loginContainer {
+	min-height: 70vh;
+}
+
+.login-button-div{
+/*	padding-left:10%;
+*/}
+
+.orderHistorySection {
+	min-height: 70vh;
+}
+
+.product-desc{
+
+	text-align:left;
+	font-size:1.1em;
+	padding:5px;
+	line-height:.4em;
+
+}
+
+.thumbnail {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+	.thumbnail > div {
+		padding: 10px;
+	}
+
+.customerDatabase {
+    min-height: 70vh;
+}
+
+.supplierDatabase {
+    min-height: 70vh;
+}
+.serviceRecordDataBase{
+    min-height: 70vh;
+}
+
+.totalText{
+    margin-left:10%;
+}
+
+.repeater {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.imageSize{
+    width:fit-content;
+    height:auto;
+}
+
+.cols{
+    border: 1px solid black;
+    margin:5px;
+}
+
+@media screen and (max-width: 768px) {
+
+
+    .cols {
+        border: 1px solid black;
+        margin: 0px;
+    }
+}
+
+.custom-curser{
+    cursor:pointer;
+    color:black;
+}
+
+.employee-image{
+    min-height:300px;
+}
+
+
+@charset "utf-8";
+
+
+
+body {
+	overflow-x: hidden;
+}
+
+nav {
+	font-family: "Landasans Medium";
+	font-size: 32px;
+}
+
+.banner h1 {
+	color: black;
+}
+
+.btn {
+	outline: none;
+}
+
+	.btn:active {
+		outline: none;
+	}
+
+	.btn:hover {
+		outline: none;
+	}
+
+.blackbar {
+	height: 40px;
+	background-color: black;
+}
+
+.jumbotron-fluid h2 {
+	font-family: "Landasans Medium";
+	color: black;
+}
+
+.jumbotron-fluid p {
+	font-family: "Landasans Medium";
+	font-size: 25px;
+	text-align: center;
+	color: black;
+}
+
+.vision {
+	text-align: center;
+}
+
+.col-12 p {
+	font-family: "Landasans Medium";
+	font-size: 25px;
+}
+
+.display-4 {
+	font-family: "SPEED FEZ italic";
+}
+
+
+
+.navbar a,
+.navbar .nav-item.dropdown .nav-link {
+	color: black;
+	padding: 0 15px;
+}
+
+.navbar .nav-item.dropdown .dropdown-menu a {
+	color: black;
+}
+
+.navbar a:hover,
+.navbar .nav-item.dropdown:hover .nav-link {
+	color: white;
+	text-decoration: underline;
+}
+
+
+.navbar-nav .nav-item.dropdown:hover .dropdown-menu {
+	display: block;
+}
+
+.navbar-nav .nav-item.dropdown .dropdown-menu {
+	display: none;
+	position: absolute;
+	background-color: #D99414;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+
+.navbar-nav .nav-item.dropdown .dropdown-menu a {
+	color: black;
+	padding: 12px 16px;
+	display: block;
+	text-decoration: none;
+}
+
+.navbar-nav .nav-item.dropdown .dropdown-menu a:hover {
+	background-color: #fff;
+	color: #000;
+}
+
+.logo-top {
+	margin-left: 15px;
+	width: 300px;
+}
+
+.card {
+	margin-left: auto;
+	margin-right:auto;
+	line-height: .5;
+	font-size: 32px;
+	padding-bottom: 25px;
+	min-height: 150px;
+}
+
+
+	.card h5 {
+		font-family: "Landasans Medium";
+		font-size: 48px;
+/*		margin-left: 75px;
+*/	}
+
+a.mail {
+	font-family: "Landasans Medium";
+	color: black;
+}
+
+	a.mail:hover {
+		color: #8B181B;
+	}
+
+	a.mail:visited {
+		color: #D99414;
+	}
+
+.location_2 {
+	margin-left: 450px;
+	margin-top: -200px;
+}
+
+.col-md-3 img {
+	padding-bottom: 30px;
+}
+
+.col-md-3 {
+	font-family: "Landasans Medium";
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+
+	.col-md-3 h2 {
+		font-size: 1.5em;
+		font-weight: 500;
+	}
+
+	.col-md-3 p {
+		font-family: "Landasans Medium";
+		font-size:2vw;
+	}
+
+.col-md-6 h3 {
+	font-size: 32px;
+	font-weight: 500;
+	color: black;
+}
+
+.col-2 btn {
+	background-color: #8B181B;
+}
+
+/*.col-md-12 {
+	text-align: center;
+}*/
+
+.above {
+	background-color: black;
+	font-family: "Landasans Medium";
+	font-size: 22px;
+}
+
+	.above input {
+		font-size: 16px;
+		font-family: sans-serif;
+	}
+
+	.above .nav-item, .above a {
+		text-decoration: none;
+		color: white;
+	}
+
+		.above .nav-item:first-of-type {
+			margin-right: 25px;
+		}
+
+
+.hero-section, .hero {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+}
+
+.hero-inner {
+	position: absolute;
+	top: 45px;
+	right: 5%;
+	margin-right: 5%;
+}
+
+	.hero-inner h1 {
+		font-family: "SPEED FEZ italic";
+		font-size: 11vw;
+		line-height: 75%;
+		color: black;
+	}
+
+	.hero-inner h2 {
+		font-family: "Landasans Medium";
+		font-size: 3vw;
+		color: black;
+	}
+
+.blank {
+	font-family: "SPEED FEZ italic";
+	font-size: 5em;
+	text-align: center;
+	background-color: white;
+	height: 30px;
+	padding-bottom: 20px;
+}
+
+.banner {
+	margin-top: 10px;
+}
+
+	.banner h2 {
+		text-align: center;
+		color: black;
+	}
+
+
+#bigger {
+	font-size: 6.75vw;
+	font-family: "SPEED FEZ italic";
+	text-align: center;
+	line-height: .8;
+}
+
+.btn {
+	background-color: #8B181B;
+	border: none;
+	color: white;
+	padding: 12px 28px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 28px;
+}
+
+.copyright {
+	text-align: center;
+	padding: 15px;
+	background-color: #000;
+	color: white;
+	font-weight: bold;
+/*	font-family: "Landasans Ultra Light";
+*/	margin-top: -25px;
+}
+
+.custom-radius{
+	border-radius:5px;
+	
+}
+
+.foot {
+	background: #D99414;
+	text-decoration: none;
+	font-family: "Landasans Medium";
+	overflow-x: hidden;
+	width: 100%;
+	margin-bottom: 20px;
+	color: black;
+}
+
+#foot-logo {
+	margin-left: -75px;
+	margin-right: -75px;
+	padding: 0;
+}
+
+.foot h5 {
+	font-size: 38px;
+	font-weight: 500;
+	padding-top: 25px;
+	color: black;
+}
+
+.foot ul {
+	list-style: none;
+	padding: 0;
+	font-size: 24px;
+}
+
+	.foot ul li {
+		color: black;
+	}
+
+
+		.foot ul li a {
+			text-decoration: none;
+			color: black;
+		}
+
+			.foot ul li a:hover {
+				text-decoration: underline;
+				color: white;
+			}
+
+h6{
+	text-align:center;
+}
+
+#locations {
+	font-family: "Landasans Medium";
+	font-size: 32px !important;
+	margin-bottom: 20px;
+}
+
+.signup-banner {
+	align-items: center;
+	background-color: #D99414;
+	font-family: "Landasans Medium";
+	width: auto;
+	text-align: center;
+	padding-top: 15px;
+}
+
+	.signup-banner h1 {
+		font-size: 40px;
+		text-align: center;
+		color: black;
+	}
+
+.text-center, mb-4 {
+	font-family: "Landasans Medium";
+	font-size: 48px;
+	font-weight: 500;
+}
+
+.signup-banner h3 {
+	margin-bottom: 5px;
+	color: black;
+}
+
+.signup-banner button {
+	margin-top: -70px;
+	max-width: 80%;
+	outline: none;
+}
+
+.signup-button {
+	background-color: #8B181B !important;
+	border: none;
+	color: white;
+	padding: 15px 33px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+
+.signup-banner .btn.btn-primary {
+	background-color: #8B181B !important;
+	font-size: 25px !important;
+	outline: none !important;
+	border: none !important;
+}
+
+.sales {
+	margin-top: 4em;
+	margin-top: 15px;
+}
+
+.title {
+	font-size: 58px;
+	font-weight: 500;
+}
+
+.container-fluid {
+	font-weight: 500;
+	margin-top: 50px;
+	text-decoration: none;
+	color: black;
+	font-size: 22px;
+}
+
+.col-md-6 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 45px;
+}
+
+.container-fluid, a {
+	text-decoration: none;
+	color: #8b181b;
+}
+
+.col-md-3 {
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.col-md-3, h2 {
+	margin-top: 10px;
+}
+
+.partner {
+	font-weight: 700;
+	font-family: "Landasans Medium";
+	text-align: center;
+	color: black;
+}
+
+	.partner h2 {
+		font-size: 50px;
+	}
+
+.below {
+	margin-top: 2em;
+}
+
+.col-sm-2 {
+	justify-content: center;
+	margin-top: -10px;
+}
+
+
+.cta {
+	font-family: "SPEED FEZ italic";
+}
+
+.modal-header .modal-title {
+	text-align: center !important;
+}
+
+.modal-title {
+	font-size: 32px;
+	font-weight: 600;
+	text-align: center !important;
+}
+
+.email {
+	font-size: 24px;
+	font-weight: 500;
+	text-align: center;
+}
+
+.padding {
+	margin-top: 5em;
+	font-family: "Landasans Medium";
+}
+
+	.padding .custom-height {
+		height: auto;
+	}
+
+	.padding h2 {
+		font-size: 3em;
+		font-weight: 500;
+	}
+
+	.padding p {
+		font-size: 28px;
+	}
+
+	.padding button {
+		background-color: #8B181B;
+		font-size: 28px;
+	}
+
+		.padding button:hover {
+			background-color: #8B181B;
+		}
+
+.descrption h2 {
+	font-family: "Landasans Medium";
+	font-size: 3.5em;
+	font-weight: 500;
+}
+
+.lead {
+	padding: 20px;
+	font-family: "Landasans Medium";
+}
+
+#antique {
+	margin-top: 45px;
+}
+
+.row {
+	font-family: "Landasans Medium";
+	color: black;
+	font-size: 23px;
+}
+
+.space {
+	background-color: white;
+	height: 25px;
+}
+
+@media only screen and (min-width: 1500px) {
+	.hero-inner {
+		right: 5%;
+		margin-top: 40px
+	}
+
+	.card {
+		padding-bottom: 50px;
+	}
+
+	.space {
+		height: 50px;
+	}
+
+	#locations {
+		margin-bottom: 150px;
+	}
+
+	.location_2 img {
+		max-width: 100%;
+	
+		height: auto;
+/*		display:none;
+*/
+	}
+}
+
+
+@media only screen and (max-width: 991px) {
+
+	.foot {
+		text-align: center;
+	}
+
+	#foot-logo {
+		margin: 0 auto;
+	}
+
+	.partner .col-sm-2 {
+		padding: 15px;
+	}
+
+	.card {
+/*		padding-bottom: 275px;
+		height: auto;*/
+	}
+	.space {
+		height: 75px;
+	}
+
+	.location_2 img {
+		/*		max-width: 100%;
+		height: auto;*/
+		display: none;
+	}
+/*	.custom-card{
+		width:auto;
+	}*/
+
+	.smallSize{
+		text-align:center;
+	}
+
+	.card-custom {
+		width: 65%;
+	}
+	.customA {
+		margin-left: auto;
+		margin-right: auto;
+		width: 75%;
+	}
+
+	.btn-text{
+		font-size:50%;
+	}
+
+	.diagonal-text {
+		position: absolute;
+		transform: rotate(-35deg);
+		transform-origin: 0 0;
+		color: #BF2129;
+		top: 35%;
+		right: 75%;
+		z-index: 1;
+		width:350px;
+	}
+
+	.col-md-3 h2 { /* New */
+		font-size: 3vw;
+	}
+
+	.col-md-3 p { /* New */
+		font-size: 3vw;
+	}
+}
+
+
+
+
+@media only screen and (max-width: 768px) {
+	.hero-inner {
+		right: 14%;
+		margin-right: 0;
+	}
+
+		.hero-inner h1 {
+			font-family: "SPEED FEZ italic";
+			font-size: 9vw;
+			line-height: 68%;
+		}
+
+		.hero-inner h2 {
+			font-family: "Landasans Medium";
+			font-size: 2.5vw;
+		}
+
+	.partner .col-sm-2 {
+		padding: 10px;
+	}
+
+	.custom-height {
+/*		margin-bottom: -100px;
+*/		padding: 20px;
+	}
+
+	.padding {
+		margin-top: -25px;
+	}
+
+		.padding #move {
+			margin-top: -65px;
+		}
+
+		.padding #please {
+/*			margin-top: 85px;
+*/		}
+
+	.card {
+		height: auto;
+	}
+
+	.location_2 img {
+		max-width: 50%;
+		height: auto;
+	}
+
+	.diagonal-text {
+		position: absolute;
+		transform: rotate(-35deg);
+		transform-origin: 0 0;
+		color: #BF2129;
+		top: 35%;
+		right: 75%;
+		z-index: 1;
+		width: 350px;
+	}
+
+	.col-md-3 h2 { /* New */
+		font-size: 1.5em;
+	}
+
+	.col-md-3 p { /* New */
+		font-size: 3vw;
+	}
+
+	.filter-body { /* New */
+		margin-right: 25px;
+	}
+
+	.main-content { /* New FILTER RESPONSIVENESS*/
+		display: flex;
+		flex-direction: column-reverse;
+	}
+
+	.sidebar { /* New FILTER RESPONSIVENESS*/
+		width: 100%;
+		order: 2;
+	}
+
+	.content { /* New FILTER RESPONSIVENESS*/
+		width: 100%;
+	}
+
+	.banner h2 {
+		font-size: 9vw;
+	}
+	.w-25 {
+		width: 100% !important;
+	}
+	.btn-text {
+		font-size: 50%;
+	}
+
+}
+
+@media only screen and (max-width: 550px) {
+	.hero-inner {
+		margin-top: -15px;
+	}
+	.w-25{
+		width:100% !important;
+	}
+	.navbar-toggler {
+		margin: 0 auto;
+	}
+
+	.logo-top {
+		margin: 0 auto -15px auto;
+		width: 90%;
+	}
+
+	.navbar-brand {
+		text-align: center;
+	}
+
+	.mt-5 {
+		padding: 5px;
+		margin-top: 50px;
+	}
+
+	.custom-height {
+		margin-bottom: -50px;
+	}
+
+		.custom-height h2 {
+			font-size: 20px;
+		}
+
+		.custom-height p {
+			font-size: 15px;
+		}
+
+		.custom-height button {
+			font-size: 18px;
+		}
+
+	.padding img {
+		padding: 10px;
+		margin-top:9%;
+	}
+
+	.padding {
+		margin-top: -50px;
+	}
+
+		.padding #move {
+/*			margin-top: -125px;*/
+			margin-top: 10px;
+		}
+
+		.padding #please {
+			margin-top: -9%;
+/*			margin-top: -65px;*/
+			padding-bottom: 10px;
+		}
+
+	#antique {
+		margin-top: 0;
+		padding-bottom: 20px;
+	}
+
+	.card {
+/*		height: 350px;
+*/	}
+
+		.card h5 {
+			margin-left: 0;
+		}
+
+	.location_2 img {
+		/*		max-width: 70%;
+		height: auto;*/
+		display: none;
+	}
+
+	.smallSize {
+		text-align: center;
+	}
+
+	.card-custom{
+		width:65%;
+	}
+
+	.customA {
+		margin-left:auto;
+		margin-right:auto;
+		width:75%;
+	}
+	.diagonal-text {
+		position: absolute;
+		transform: rotate(-35deg);
+		transform-origin: 0 0;
+		color: #BF2129;
+		top: 35%;
+		right: 75%;
+		z-index: 1;
+	}
+}
+
+@media only screen and (max-width: 380px) {
+
+	.diagonal-text {
+		position: relative;
+		transform: rotate(-35deg);
+		transform-origin: 0 0;
+		color: #BF2129;
+		top: -78px;
+		left: -5px;
+		z-index: 1;
+	}
+
+}
+
+@media only screen and (max-width: 300px) {
+
+	.diagonal-text {
+		position: relative;
+		transform: rotate(-35deg);
+		transform-origin: 0 0;
+		color: #BF2129;
+		top: -60px;
+		left: 10px;
+		z-index: 1;
+	}
+}
+
+
